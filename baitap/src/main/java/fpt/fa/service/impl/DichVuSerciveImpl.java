@@ -29,12 +29,12 @@ public class DichVuSerciveImpl implements DichVuService{
 
 	@Override
 	public void update(DichVu DichVu) {
-		this.repository.save(DichVu);
+		this.repository.update(DichVu);
 		
 	}
 
 	@Override
-	public DichVu getDichVuById(String id) {
+	public DichVu getDichVuById(int id) {
 		return this.repository.getDichVuById(id);
 	}
 
@@ -44,7 +44,7 @@ public class DichVuSerciveImpl implements DichVuService{
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		this.repository.deleteById(id);
 		
 	}

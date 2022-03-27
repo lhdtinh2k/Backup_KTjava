@@ -34,7 +34,7 @@ public class KhachHangServiceImpl implements KhachHangService{
 	}
 
 	@Override
-	public KhachHang getKhachHangById(String id) {
+	public KhachHang getKhachHangById(int id) {
 		return this.repository.getKhachHangById(id);
 	}
 
@@ -44,7 +44,7 @@ public class KhachHangServiceImpl implements KhachHangService{
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		this.repository.deleteById(id);
 		
 	}

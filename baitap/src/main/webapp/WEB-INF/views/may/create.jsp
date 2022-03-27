@@ -13,12 +13,6 @@
 	<form:form action="/may/create" method="post" modelAttribute="may">		<!--	Maycontroller:	model.addAttribute("may", new May());  -->
 		<table border="1">
 			<tr>
-				<td>Ma May</td>
-				<td>
-					<form:input path="MaMay"/>
-				</td>
-			</tr>
-			<tr>
 				<td>Vi Tri</td>
 				<td>
 					<form:input path="ViTri" />

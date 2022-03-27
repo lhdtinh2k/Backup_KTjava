@@ -44,7 +44,7 @@ public class MayController {
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)		//lay chuyen sang trang update
-	public String displayUpdate(@RequestParam String id, Model model) {
+	public String displayUpdate(@RequestParam int id, Model model) {
 		model.addAttribute("updateMay", mayService.getMayById(id));
 		return "may/update";
 	}
@@ -56,7 +56,7 @@ public class MayController {
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String delete(@RequestParam String id, Model model) {
+	public String delete(@RequestParam int id, Model model) {
 		mayService.deleteById(id);
 		return "redirect:/may/list";
 	}

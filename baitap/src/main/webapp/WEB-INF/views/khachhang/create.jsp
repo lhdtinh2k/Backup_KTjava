@@ -13,13 +13,6 @@
 	<form:form action="/khachhang/create" method="post" modelAttribute="khachhang">
 		<table border="1">
 			<tr>
-				<td>Ma khách hàng</td>
-				<td>
-					<form:input path="MaKH"/>
-
-				</td>
-			</tr>
-			<tr>
 				<td>Tên khách hàng</td>
 				<td>
 					<form:input path="TenKH" />

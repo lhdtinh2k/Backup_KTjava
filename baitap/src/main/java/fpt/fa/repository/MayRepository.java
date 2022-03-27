@@ -7,7 +7,7 @@ import fpt.fa.entities.May;
 public interface MayRepository {
 	void save(May May);
 	void update(May May);
-	May getMayById(String id);
+	May getMayById(int id);
 	List<May> getList();
-	void deleteById(String id);
+	void deleteById(int id);
 }

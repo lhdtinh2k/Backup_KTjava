@@ -7,7 +7,7 @@ import fpt.fa.entities.KhachHang;
 public interface KhachHangService {
 	void save(KhachHang KhachHang);
 	void update(KhachHang KhachHang);
-	KhachHang getKhachHangById(String id);
+	KhachHang getKhachHangById(int id);
 	List<KhachHang> getList();
-	void deleteById(String id);
+	void deleteById(int id);
 }

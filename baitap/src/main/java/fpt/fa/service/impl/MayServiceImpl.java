@@ -34,7 +34,7 @@ public class MayServiceImpl implements MayService {
 	}
 
 	@Override
-	public May getMayById(String id) {
+	public May getMayById(int id) {
 		return this.repository.getMayById(id);
 	}
 
@@ -45,7 +45,7 @@ public class MayServiceImpl implements MayService {
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		this.repository.deleteById(id);
 		
 	}

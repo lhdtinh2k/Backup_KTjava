@@ -2,6 +2,8 @@ package fpt.fa.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +11,8 @@ import javax.persistence.Table;
 @Table(name = "KhachHang")
 public class KhachHang {
 	@Id
-	private String MaKH;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int MaKH;
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	private String TenKH;
@@ -23,11 +26,11 @@ public class KhachHang {
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	private String DiaChiEmail;
 
-	public String getMaKH() {
+	public int getMaKH() {
 		return MaKH;
 	}
 
-	public void setMaKH(String maKH) {
+	public void setMaKH(int maKH) {
 		MaKH = maKH;
 	}
 
@@ -63,7 +66,10 @@ public class KhachHang {
 		DiaChiEmail = diaChiEmail;
 	}
 
-	public KhachHang(String maKH, String tenKH, String diaChi, String soDienThoai, String diaChiEmail) {
+	public KhachHang() {
+	}
+
+	public KhachHang(int maKH, String tenKH, String diaChi, String soDienThoai, String diaChiEmail) {
 		super();
 		MaKH = maKH;
 		TenKH = tenKH;
@@ -72,17 +78,11 @@ public class KhachHang {
 		DiaChiEmail = diaChiEmail;
 	}
 
-	public KhachHang() {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public String toString() {
 		return "KhachHang [MaKH=" + MaKH + ", TenKH=" + TenKH + ", DiaChi=" + DiaChi + ", SoDienThoai=" + SoDienThoai
 				+ ", DiaChiEmail=" + DiaChiEmail + "]";
-	}
-	
-	
+	}	
 		
 	
 }

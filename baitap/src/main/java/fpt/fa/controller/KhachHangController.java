@@ -43,4 +43,22 @@ public class KhachHangController {
 		khachHangService.save(kh);
 		return "redirect:/khachhang/list";
 	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.GET)		//lay truoc
+	public String displayUpdate(@RequestParam int id, Model model) {
+		model.addAttribute("updateKhachHang", khachHangService.getKhachHangById(id));
+		return "khachhang/update";
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)		//lay o tren roi update
+	public String update(@ModelAttribute(name = "updateKhachHang") KhachHang khachhang, Model model) {
+		khachHangService.update(khachhang);
+		return "redirect:/khachhang/list";
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam int id, Model model) {
+		khachHangService.deleteById(id);
+		return "redirect:/khachhang/list";
+	}
 }

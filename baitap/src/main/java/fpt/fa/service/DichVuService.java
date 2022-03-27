@@ -7,7 +7,7 @@ import fpt.fa.entities.DichVu;
 public interface DichVuService {
 	void save(DichVu DichVu);
 	void update(DichVu DichVu);
-	DichVu getDichVuById(String id);
+	DichVu getDichVuById(int id);
 	List<DichVu> getList();
-	void deleteById(String id);
+	void deleteById(int id);
 }

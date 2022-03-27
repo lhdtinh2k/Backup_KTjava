@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import fpt.fa.entities.May;
-import fpt.fa.entities.Student;
 import fpt.fa.repository.MayRepository;
 
 @Transactional
@@ -43,7 +42,7 @@ public class MayRepositoryImpl implements MayRepository{
 	}
 
 	@Override
-	public May getMayById(String id) {
+	public May getMayById(int id) {
 		
 		return sessionFactory.getCurrentSession().find(May.class, id);
 	}
@@ -55,7 +54,7 @@ public class MayRepositoryImpl implements MayRepository{
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		May may = getMayById(id);
 		sessionFactory.getCurrentSession().delete(may);
 		

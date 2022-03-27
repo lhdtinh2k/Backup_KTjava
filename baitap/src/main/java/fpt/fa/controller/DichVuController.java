@@ -42,4 +42,22 @@ public class DichVuController {
 		dichvuService.save(dichvu);
 		return "redirect:/dichvu/list";
 	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.GET)		//lay truoc
+	public String displayUpdate(@RequestParam int id, Model model) {
+		model.addAttribute("updateDichVu", dichvuService.getDichVuById(id));
+		return "dichvu/update";
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)		//lay o tren roi update
+	public String update(@ModelAttribute(name = "updateDichVu") DichVu dichVu, Model model) {
+		dichvuService.update(dichVu);
+		return "redirect:/dichvu/list";
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam int id, Model model) {
+		dichvuService.deleteById(id);
+		return "redirect:/dichvu/list";
+	}
 }

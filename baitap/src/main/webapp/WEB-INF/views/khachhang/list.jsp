@@ -13,10 +13,11 @@
 	<a href="/khachhang/create">Tạo mới khách hàng</a>
 	<table border="1">
 		<tr>
-			<th>Mã dịch vụ</th>
+			<th>Mã khách hàng</th>
 			<th>Tên dịch vụ</th>
-			<th>Đơn vị tính</th>
-			<th>Giá</th>
+			<th>Địa chỉ</th>
+			<th>Số điện thoại</th>
+			<th>Địa chỉ Email</th>
 			<th>Button</th>
 		</tr>
 		<c:forEach items="${listKhachHangs}" var="khachhang">

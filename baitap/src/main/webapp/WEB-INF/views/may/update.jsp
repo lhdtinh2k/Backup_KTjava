@@ -10,33 +10,28 @@
 </head>
 <body>
 	<h1>Update new Student</h1>
-	<form:form action="/student/update" method="post" modelAttribute="updateStudent">
+	<form:form action="/may/update" method="post" modelAttribute="updateMay">
 		<table border="1">
 			<tr>
-				<td>ID</td>
-				<td>${updateStudent.id }</td>
+				<td>Ma May</td>
+				<td>${updateMay.maMay }</td>
 			</tr>
 			<tr>
-				<td>Name</td>
-				<td><form:input path="name" /></td>
-			</tr>
-			<tr>
-				<td>Age</td>
+				<td>Vi Tri</td>
 				<td>
-					<form:input path="age" />
-					<form:errors path="age" cssClass="error"></form:errors>
+					<form:input path="ViTri" />
 				</td>
 			</tr>
 			<tr>
-				<td>Address</td>
-				<td><form:input path="address" /></td>
+				<td>Trang Thai</td>
+				<td><form:input path="TrangThai" /></td>
 			</tr>
 			<tr>
 				<td><input type="reset" value="Reset"></td>
 				<td><form:button>Update</form:button></td>
 			</tr>
 		</table>
-		<form:hidden path="id"/>
+		<form:hidden path="MaMay"/>
 	</form:form>
 </body>
 </html>

@@ -31,7 +31,7 @@ public class KhachHangRepositoryImpl implements KhachHangReporistory{	//nho them
 	}
 
 	@Override
-	public KhachHang getKhachHangById(String id) {
+	public KhachHang getKhachHangById(int id) {
 		return sessionFactory.getCurrentSession().find(KhachHang.class, id);
 	}
 
@@ -41,7 +41,7 @@ public class KhachHangRepositoryImpl implements KhachHangReporistory{	//nho them
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		KhachHang KH = getKhachHangById(id);
 		sessionFactory.getCurrentSession().delete(KH);
 	}

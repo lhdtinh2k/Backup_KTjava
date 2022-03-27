@@ -31,7 +31,7 @@ public class DichVuRepositoryImpl implements DichVuRepository{
 	}
 
 	@Override
-	public DichVu getDichVuById(String id) {
+	public DichVu getDichVuById(int id) {
 		return sessionFactory.getCurrentSession().find(DichVu.class, id);
 	}
 
@@ -41,9 +41,9 @@ public class DichVuRepositoryImpl implements DichVuRepository{
 	}
 
 	@Override
-	public void deleteById(String id) {
-		DichVu dv = getDichVuById(id);
-		sessionFactory.getCurrentSession().delete(dv);
+	public void deleteById(int id) {
+		DichVu dichvu = getDichVuById(id);
+		sessionFactory.getCurrentSession().delete(dichvu);
 		
 	}
 
