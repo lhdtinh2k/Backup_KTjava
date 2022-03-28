@@ -20,24 +20,24 @@ public class SuDungDichVu implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
+	
 	@ManyToOne
 	@JoinColumn(name = "MaDV")
 	private DichVu dichvu;
 
-	@Id
+	
 	@ManyToOne
 	@JoinColumn(name = "MaKH")
 	private KhachHang khachhang;
 	
 	@Id
-	@Column(name = "NgayBatDauSuDung")
+	@Column(name = "NgaySuDung")
 	@Temporal(TemporalType.DATE)
-	protected Date NgayBatDauSuDung ;
+	protected Date NgaySuDung ;
 	
 	@Id
-	@Column(name = "GioBatDauSuDung")
-	protected int GioBatDauSuDung ;
+	@Column(name = "GioSuDung")
+	protected int GioSuDung ;
 	
 	@Column(name = "SoLuong")
 	private int SoLuong ;
@@ -58,20 +58,24 @@ public class SuDungDichVu implements Serializable{
 		this.khachhang = khachhang;
 	}
 
-	public Date getNgayBatDauSuDung() {
-		return NgayBatDauSuDung;
+	public Date getNgaySuDung() {
+		return NgaySuDung;
 	}
 
-	public void setNgayBatDauSuDung(Date ngayBatDauSuDung) {
-		NgayBatDauSuDung = ngayBatDauSuDung;
+	public void setNgaySuDung(Date ngaySuDung) {
+		NgaySuDung = ngaySuDung;
 	}
 
-	public int getGioBatDauSuDung() {
-		return GioBatDauSuDung;
+	public int getGioSuDung() {
+		return GioSuDung;
 	}
 
-	public void setGioBatDauSuDung(int gioBatDauSuDung) {
-		GioBatDauSuDung = gioBatDauSuDung;
+	public void setGioSuDung(int gioSuDung) {
+		GioSuDung = gioSuDung;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public int getSoLuong() {
@@ -81,6 +85,27 @@ public class SuDungDichVu implements Serializable{
 	public void setSoLuong(int soLuong) {
 		SoLuong = soLuong;
 	}
+
+	public SuDungDichVu(DichVu dichvu, KhachHang khachhang, Date ngaySuDung, int gioSuDung, int soLuong) {
+		super();
+		this.dichvu = dichvu;
+		this.khachhang = khachhang;
+		NgaySuDung = ngaySuDung;
+		GioSuDung = gioSuDung;
+		SoLuong = soLuong;
+	}
+
+	public SuDungDichVu() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "SuDungDichVu [dichvu=" + dichvu + ", khachhang=" + khachhang + ", NgaySuDung=" + NgaySuDung
+				+ ", GioSuDung=" + GioSuDung + ", SoLuong=" + SoLuong + "]";
+	}
+	
 	
 	
 }
