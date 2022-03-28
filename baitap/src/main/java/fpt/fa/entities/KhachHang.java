@@ -1,10 +1,15 @@
 package fpt.fa.entities;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +30,19 @@ public class KhachHang {
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	private String DiaChiEmail;
+
+	@OneToMany(mappedBy = "khachhang", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SuDungDichVu> suDungDichVus;
+		
+
+	
+	public Set<SuDungDichVu> getSuDungDichVus() {
+		return suDungDichVus;
+	}
+
+	public void setSuDungDichVus(Set<SuDungDichVu> suDungDichVus) {
+		this.suDungDichVus = suDungDichVus;
+	}
 
 	public int getMaKH() {
 		return MaKH;

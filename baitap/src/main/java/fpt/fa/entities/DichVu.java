@@ -1,15 +1,21 @@
 package fpt.fa.entities;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "DichVu")
 public class DichVu {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int MaDV;
@@ -22,6 +28,19 @@ public class DichVu {
 
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	private double DonGia;
+
+	@OneToMany(mappedBy = "dichvu", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SuDungDichVu> suDungDichVus;
+	
+
+
+	public Set<SuDungDichVu> getSuDungDichVus() {
+		return suDungDichVus;
+	}
+
+	public void setSuDungDichVus(Set<SuDungDichVu> suDungDichVus) {
+		this.suDungDichVus = suDungDichVus;
+	}
 
 	public int getMaDV() {
 		return MaDV;
