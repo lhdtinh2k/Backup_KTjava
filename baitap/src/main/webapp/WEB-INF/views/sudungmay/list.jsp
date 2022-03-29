@@ -50,8 +50,9 @@
 												<a href="/sudungmay/delete?id=${sdmay.maMay.getMaMay() }">Delete</a> <a
 												href="/sudungmay/detail?id=${sdmay.maMay.getMaMay() }">Detail</a></td>
 										</tr>
+									</c:forEach>
 								</tbody>
-								</c:forEach>
+								
 							</table>
 						</div>
 					</div>

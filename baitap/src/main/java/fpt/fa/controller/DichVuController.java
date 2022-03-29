@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fpt.fa.entities.DichVu;
 import fpt.fa.service.DichVuService;
-import fpt.fa.validated.DichVuValidated;
-import fpt.fa.validated.StudentValided;
 
 
 @Controller

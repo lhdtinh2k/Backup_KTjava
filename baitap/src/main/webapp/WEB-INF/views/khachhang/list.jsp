@@ -51,8 +51,9 @@
 												<a href="/khachhang/detail?id=${khachhang.maKH }">Detail</a>
 											</td>
 										</tr>
+									</c:forEach>	
 								</tbody>
-								</c:forEach>
+								
 							</table>
 						</div>
 					</div>

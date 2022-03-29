@@ -11,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -28,11 +27,9 @@ public class DichVu {
 	private String TenDV;
 	
 	@Column(nullable = true)
-	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String DonViTinh;
 
 	@Column(nullable = true)
-	@Min(value = 18, message = "Tuổi không được nhỏ hơn {value}")
 	private double DonGia;
 
 	@OneToMany(mappedBy = "MaDV", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -80,28 +77,13 @@ public class DichVu {
 		DonGia = donGia;
 	}
 
-	public DichVu(int maDV, String tenDV, String donViTinh, double donGia) {
-		super();
-		MaDV = maDV;
-		TenDV = tenDV;
-		DonViTinh = donViTinh;
-		DonGia = donGia;
-	}
-
 	public DichVu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String toString() {
-		return "DichVu [MaDV=" + MaDV + ", TenDV=" + TenDV + ", DonViTinh=" + DonViTinh + ", DonGia=" + DonGia + "]";
-	}
-
-	public DichVu(int maDV, @Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự") String tenDV,
-			@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự") String donViTinh,
-			@Min(value = 18, message = "Tuổi không được nhỏ hơn {value}") double donGia,
-			Set<SuDungDichVu> suDungDichVus) {
+	public DichVu(int maDV, String tenDV, String donViTinh,
+			double donGia, Set<SuDungDichVu> suDungDichVus) {
 		super();
 		MaDV = maDV;
 		TenDV = tenDV;
@@ -110,6 +92,12 @@ public class DichVu {
 		this.suDungDichVus = suDungDichVus;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "DichVu [MaDV=" + MaDV + ", TenDV=" + TenDV + ", DonViTinh=" + DonViTinh + ", DonGia=" + DonGia
+				+ ", suDungDichVus=" + suDungDichVus + "]";
+	}
+
+
 	
 }

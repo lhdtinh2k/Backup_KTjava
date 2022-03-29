@@ -63,4 +63,12 @@ public class KhachHangController {
 		khachHangService.deleteById(id);
 		return "redirect:/khachhang/list";
 	}
+	
+	
+	@RequestMapping(value = "/all", method = RequestMethod.GET)	//ten link address
+	public String listAll(Model model) {
+		List<KhachHang> khachHangs = khachHangService.getList();	
+		model.addAttribute("listKhachHangs", khachHangs);
+		return "khachhang/listAll";		//link jsp
+	}
 }

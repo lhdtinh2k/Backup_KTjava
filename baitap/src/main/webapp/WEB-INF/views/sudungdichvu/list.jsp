@@ -50,8 +50,9 @@
 												<a href="/sudungdichvu/delete?id=${dichvu.maDV }">Delete</a> <a
 												href="/sudungdichvu/detail?id=${dichvu.maDV }">Detail</a></td>
 										</tr>
+									</c:forEach>
 								</tbody>
-								</c:forEach>
+								
 							</table>
 						</div>
 					</div>

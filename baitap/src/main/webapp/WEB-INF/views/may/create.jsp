@@ -30,20 +30,17 @@
 								<tr>
 									<td>Vi Tri</td>
 									<td><form:input path="ViTri" /></td>
-									<td>
-									<form:errors path="ViTri" cssClass="error"></form:errors>
-									</td>
+									<td><form:errors path="ViTri" cssClass="error"></form:errors></td>
 								</tr>
 								<tr>
 									<td>Trang Thai</td>
 									<td><form:input path="TrangThai" /></td>
-									<td>
-									<form:errors path="TrangThai" cssClass="error"></form:errors>
-									<td>
+									<td><form:errors path="TrangThai" cssClass="error"></form:errors></td>
 								</tr>
 								<tr>
 									<td><input type="reset" value="Reset"></td>
 									<td><form:button>Register</form:button></td>
+									<td></td>
 								</tr>
 							</table>
 						</form:form>

@@ -114,7 +114,8 @@ public class KhachHang {
 	@Override
 	public String toString() {
 		return "KhachHang [MaKH=" + MaKH + ", TenKH=" + TenKH + ", DiaChi=" + DiaChi + ", SoDienThoai=" + SoDienThoai
-				+ ", DiaChiEmail=" + DiaChiEmail + "]";
+				+ ", DiaChiEmail=" + DiaChiEmail + ", suDungDichVus=" + suDungDichVus + ", suDungMays=" + suDungMays
+				+ "]";
 	}	
 		
 	

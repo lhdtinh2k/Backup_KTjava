@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>List dịch vụ</title>
+<title>List khách hàng</title>
 <jsp:include page="/WEB-INF/views/layout/header.jsp" />
 </head>
 <body>
@@ -23,30 +23,32 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="card">
 						<div class="header">
-							<h2>List dịch vụ</h2>
+							<h2>List khách hàng</h2>
 						</div>
 						<div class="body table-responsive">
-							<a href="/dichvu/create">Tạo mới dịch vụ</a>
+							<a href="/khachhang/create">Tạo mới khách hàng</a>
 							<table class="table table-striped" id="dataTable-listMember">
 								<thead>
 									<tr>
-										<th>Mã dịch vụ</th>
+										<th>Mã khách hàng</th>
 										<th>Tên dịch vụ</th>
-										<th>Đơn vị tính</th>
-										<th>Giá</th>
+										<th>Địa chỉ</th>
+										<th>Số điện thoại</th>
+										<th>Địa chỉ Email</th>
 										<th>Button</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${listDichVus}" var="dichvu">
+									<c:forEach items="${listKhachHangs}" var="khachhang">
 										<tr>
-											<td>${dichvu.maDV }</td>
-											<td>${dichvu.tenDV }</td>
-											<td>${dichvu.donViTinh }</td>
-											<td>${dichvu.donGia }</td>
-											<td><a href="/dichvu/update?id=${dichvu.maDV }">Update</a>
-												<a href="/dichvu/delete?id=${dichvu.maDV }">Delete</a> <a
-												href="/dichvu/detail?id=${dichvu.maDV }">Detail</a></td>
+											<td>${khachhang.maKH }</td>
+											<td>${khachhang.tenKH }</td>
+											<td>${khachhang.toString() }</td>
+
+											<td><a href="/khachhang/update?id=${khachhang.maKH }">Update</a>
+												<a href="/khachhang/delete?id=${khachhang.maKH }">Delete</a>
+												<a href="/khachhang/detail?id=${khachhang.maKH }">Detail</a>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
