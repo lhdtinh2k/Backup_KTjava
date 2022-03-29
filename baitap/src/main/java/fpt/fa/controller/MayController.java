@@ -39,6 +39,9 @@ public class MayController {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)	//tao may
 	public String create(@Valid @ModelAttribute May may, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "may/create";
+		}
 		mayService.save(may);
 		return "redirect:/may/list";//27
 	}
@@ -51,6 +54,7 @@ public class MayController {
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)		//lay o trang update roi update
 	public String update(@ModelAttribute(name = "updateMay") May may, Model model) {
+		
 		mayService.update(may);
 		return "redirect:/may/list";
 	}

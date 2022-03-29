@@ -26,23 +26,36 @@
 					<div class="content-wrap">
 						<form:form action="/dichvu/create" method="post"
 							modelAttribute="dichvu">
-							<table border="1">
-								<tr>
-									<td>Tên Dịch vụ</td>
-									<td><form:input path="TenDV" /></td>
-								</tr>
-								<tr>
-									<td>Đơn vị tính</td>
-									<td><form:input path="DonViTinh" /></td>
-								</tr>
-								<tr>
-									<td>Giá</td>
-									<td><form:input path="DonGia" /></td>
-								</tr>
-								<tr>
-									<td><input type="reset" value="Reset"></td>
-									<td><form:button>Register</form:button></td>
-								</tr>
+							<table class="table table-striped">
+								<thead>
+									<tr></tr>
+									<tr></tr>
+									<tr></tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Tên Dịch vụ</td>
+										<td><form:input path="TenDV" /></td>
+										<td><form:errors path="TenDV" cssClass="error"></form:errors>
+										</td>
+									</tr>
+									<tr>
+										<td>Đơn vị tính</td>
+										<td><form:input path="DonViTinh" /></td>
+										<td><form:errors path="DonViTinh" cssClass="error"></form:errors>
+										</td>
+									</tr>
+									<tr>
+										<td>Giá</td>
+										<td><form:input path="DonGia" /></td>
+										<td><form:errors path="DonGia" cssClass="error"></form:errors>
+										</td>
+									</tr>
+									<tr>
+										<td><input type="reset" value="Reset"></td>
+										<td><form:button>Register</form:button></td>
+									</tr>
+								</tbody>
 							</table>
 						</form:form>
 					</div>

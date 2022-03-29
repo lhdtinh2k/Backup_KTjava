@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 @Table(name = "KhachHang")
 public class KhachHang {
@@ -19,10 +21,13 @@ public class KhachHang {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int MaKH;
 	
+	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String TenKH;
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String DiaChi;
 
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
@@ -31,7 +36,7 @@ public class KhachHang {
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	private String DiaChiEmail;
 
-	@OneToMany(mappedBy = "khachhang", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "MaKH", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SuDungDichVu> suDungDichVus;
 		
 

@@ -26,14 +26,20 @@
 					<div class="content-wrap">
 						<form:form action="/may/create" method="post" modelAttribute="may">
 							<!--	Maycontroller:	model.addAttribute("may", new May());  -->
-							<table border="1">
+							<table class="table table-striped">
 								<tr>
 									<td>Vi Tri</td>
 									<td><form:input path="ViTri" /></td>
+									<td>
+									<form:errors path="ViTri" cssClass="error"></form:errors>
+									</td>
 								</tr>
 								<tr>
 									<td>Trang Thai</td>
 									<td><form:input path="TrangThai" /></td>
+									<td>
+									<form:errors path="TrangThai" cssClass="error"></form:errors>
+									<td>
 								</tr>
 								<tr>
 									<td><input type="reset" value="Reset"></td>

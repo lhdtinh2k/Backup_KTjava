@@ -27,7 +27,7 @@
 						<form:form action="/khachhang/update" method="post"
 							modelAttribute="updateKhachHang">
 
-							<table border="1">
+							<table class="table table-striped">
 								<tr>
 									<td>Ma khách hàng</td>
 									<td>${updateKhachHang.maKH }</td>

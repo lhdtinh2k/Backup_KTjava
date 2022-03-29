@@ -18,7 +18,6 @@ import fpt.fa.entities.KhachHang;
 import fpt.fa.service.KhachHangService;
 
 
-
 @Controller
 @RequestMapping(value = "/khachhang")		//tenfolder
 public class KhachHangController {
@@ -40,6 +39,9 @@ public class KhachHangController {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)	//tao may
 	public String create(@Valid @ModelAttribute KhachHang kh, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "khachhang/list";
+		}
 		khachHangService.save(kh);
 		return "redirect:/khachhang/list";
 	}

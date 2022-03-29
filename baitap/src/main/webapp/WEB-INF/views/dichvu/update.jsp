@@ -26,7 +26,7 @@
 					<div class="content-wrap">
 						<form:form action="/dichvu/update" method="post"
 							modelAttribute="updateDichVu">
-							<table border="1">
+							<table class="table table-striped" id="dataTable-listMember">
 								<tr>
 									<td>Mã dịch vụ</td>
 									<td>${updateDichVu.maDV }</td>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Create new lop hoc</title>
+<title>Create new sử dụng dịch vụ</title>
 <link rel="stylesheet" href="/resources/css/index.css">
 <jsp:include page="/WEB-INF/views/layout/header.jsp" />
 </head>
@@ -21,21 +21,21 @@
 			<div class="col-md-5 col-md-offset-4 col-md-offset-4-custom">
 				<div class="login-wrapper">
 					<div class="box">
-						<h2>Tạo lớp học</h2>
+						<h2>Đăng ký sử dụng dịch vụ</h2>
 					</div>
 					<div class="content-wrap">
 						<form:form class="form-horizontal" action="/sudungdichvu/create" method="post" modelAttribute="sudungdichvu">
-							<table border="1">
+							<table class="table table-striped">
 								<div>
 									<label>Mã dịch vụ</label>
-									<form:select path="dichvu">
+									<form:select path="MaDV">
 										<form:options items="${dichvus}" itemLabel="MaDV"
 											itemValue="MaDV" />
 									</form:select>
 								</div>
 								<div>
 									<label>Mã khách hàng</label>
-									<form:select path="khachhang">
+									<form:select path="MaKH">
 										<form:options items="${khachhangs}" itemLabel="MaKH"
 											itemValue="MaKH" />
 									</form:select>

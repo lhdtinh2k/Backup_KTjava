@@ -11,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "DichVu")
@@ -21,15 +24,18 @@ public class DichVu {
 	private int MaDV;
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String TenDV;
 	
-	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Column(nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String DonViTinh;
 
-	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Column(nullable = true)
+	@Min(value = 18, message = "Tuổi không được nhỏ hơn {value}")
 	private double DonGia;
 
-	@OneToMany(mappedBy = "dichvu", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "MaDV", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SuDungDichVu> suDungDichVus;
 	
 
@@ -90,6 +96,18 @@ public class DichVu {
 	@Override
 	public String toString() {
 		return "DichVu [MaDV=" + MaDV + ", TenDV=" + TenDV + ", DonViTinh=" + DonViTinh + ", DonGia=" + DonGia + "]";
+	}
+
+	public DichVu(int maDV, @Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự") String tenDV,
+			@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự") String donViTinh,
+			@Min(value = 18, message = "Tuổi không được nhỏ hơn {value}") double donGia,
+			Set<SuDungDichVu> suDungDichVus) {
+		super();
+		MaDV = maDV;
+		TenDV = tenDV;
+		DonViTinh = donViTinh;
+		DonGia = donGia;
+		this.suDungDichVus = suDungDichVus;
 	}
 
 	

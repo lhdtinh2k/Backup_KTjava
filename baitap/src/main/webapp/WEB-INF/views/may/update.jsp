@@ -26,7 +26,7 @@
 					<div class="content-wrap">
 						<form:form action="/may/update" method="post"
 							modelAttribute="updateMay">
-							<table border="1">
+							<table class="table table-striped">
 								<tr>
 									<td>Ma May</td>
 									<td>${updateMay.maMay }</td>

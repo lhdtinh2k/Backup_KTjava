@@ -46,6 +46,15 @@
                         <li><a href="${contextPath}/khachhang/create">Create Khách hàng</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Sử dụng dịch vụ
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${contextPath}/sudungdichvu/list">List Sử dụng dịch vụ</a></li>
+                        <li><a href="${contextPath}/sudungdichvu/create">Create Sử dụng dịch vụ</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="col-sm-3 col-md-3">
                 <form class="navbar-form" role="search">

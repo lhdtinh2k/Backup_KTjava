@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fpt.fa.entities.DichVu;
 import fpt.fa.service.DichVuService;
+import fpt.fa.validated.DichVuValidated;
+import fpt.fa.validated.StudentValided;
 
 
 @Controller
@@ -38,9 +40,12 @@ public class DichVuController {
 	}	
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)	//tao may
-	public String create(@Valid @ModelAttribute DichVu dichvu, BindingResult bindingResult, Model model) {
+	public String create(@Valid @ModelAttribute DichVu dichvu, BindingResult bindingResult, Model model) {	
+		if (bindingResult.hasErrors()) {
+			return "dichvu/create";
+		}
 		dichvuService.save(dichvu);
-		return "redirect:/dichvu/list";
+		return "redirect:/dichvu/list";//27
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)		//lay truoc

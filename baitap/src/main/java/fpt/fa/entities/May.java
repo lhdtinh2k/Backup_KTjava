@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "May")
@@ -16,9 +19,11 @@ public class May {
 	private int MaMay;
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String ViTri;
 	
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
+	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String TrangThai;
 
 	public int getMaMay() {

@@ -20,15 +20,15 @@ public class SuDungDichVu implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
 	@ManyToOne
 	@JoinColumn(name = "MaDV")
-	private DichVu dichvu;
+	private DichVu MaDV;
 
-	
+	@Id
 	@ManyToOne
 	@JoinColumn(name = "MaKH")
-	private KhachHang khachhang;
+	private KhachHang MaKH;
 	
 	@Id
 	@Column(name = "NgaySuDung")
@@ -42,20 +42,22 @@ public class SuDungDichVu implements Serializable{
 	@Column(name = "SoLuong")
 	private int SoLuong ;
 
-	public DichVu getDichvu() {
-		return dichvu;
+
+
+	public DichVu getMaDV() {
+		return MaDV;
 	}
 
-	public void setDichvu(DichVu dichvu) {
-		this.dichvu = dichvu;
+	public void setMaDV(DichVu maDV) {
+		MaDV = maDV;
 	}
 
-	public KhachHang getKhachhang() {
-		return khachhang;
+	public KhachHang getMaKH() {
+		return MaKH;
 	}
 
-	public void setKhachhang(KhachHang khachhang) {
-		this.khachhang = khachhang;
+	public void setMaKH(KhachHang maKH) {
+		MaKH = maKH;
 	}
 
 	public Date getNgaySuDung() {
@@ -86,25 +88,7 @@ public class SuDungDichVu implements Serializable{
 		SoLuong = soLuong;
 	}
 
-	public SuDungDichVu(DichVu dichvu, KhachHang khachhang, Date ngaySuDung, int gioSuDung, int soLuong) {
-		super();
-		this.dichvu = dichvu;
-		this.khachhang = khachhang;
-		NgaySuDung = ngaySuDung;
-		GioSuDung = gioSuDung;
-		SoLuong = soLuong;
-	}
 
-	public SuDungDichVu() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "SuDungDichVu [dichvu=" + dichvu + ", khachhang=" + khachhang + ", NgaySuDung=" + NgaySuDung
-				+ ", GioSuDung=" + GioSuDung + ", SoLuong=" + SoLuong + "]";
-	}
 	
 	
 	

@@ -26,22 +26,26 @@
 					<div class="content-wrap">
 						<form:form action="/khachhang/create" method="post"
 							modelAttribute="khachhang">
-							<table border="1">
+							<table class="table table-striped">
 								<tr>
 									<td>Tên khách hàng</td>
 									<td><form:input path="TenKH" /></td>
+									<form:errors path="TenKH" cssClass="error"></form:errors>
 								</tr>
 								<tr>
 									<td>Địa chỉ</td>
 									<td><form:input path="DiaChi" /></td>
+									<form:errors path="DiaChi" cssClass="error"></form:errors>
 								</tr>
 								<tr>
 									<td>Số điện thoại</td>
 									<td><form:input path="SoDienThoai" /></td>
+									<form:errors path="SoDienThoai" cssClass="error"></form:errors>
 								</tr>
 								<tr>
 									<td>Địa chỉ Email</td>
 									<td><form:input path="DiaChiEmail" /></td>
+									<form:errors path="DiaChiEmail" cssClass="error"></form:errors>
 								</tr>
 								<tr>
 									<td><input type="reset" value="Reset"></td>
