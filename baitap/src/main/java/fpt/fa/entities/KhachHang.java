@@ -38,9 +38,19 @@ public class KhachHang {
 
 	@OneToMany(mappedBy = "MaKH", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SuDungDichVu> suDungDichVus;
-		
+	
+	@OneToMany(mappedBy = "MaKH", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SuDungMay> suDungMays;
 
 	
+	public Set<SuDungMay> getSuDungMays() {
+		return suDungMays;
+	}
+
+	public void setSuDungMays(Set<SuDungMay> suDungMays) {
+		this.suDungMays = suDungMays;
+	}
+
 	public Set<SuDungDichVu> getSuDungDichVus() {
 		return suDungDichVus;
 	}

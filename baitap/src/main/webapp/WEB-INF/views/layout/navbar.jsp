@@ -52,7 +52,16 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="${contextPath}/sudungdichvu/list">List Sử dụng dịch vụ</a></li>
-                        <li><a href="${contextPath}/sudungdichvu/create">Create Sử dụng dịch vụ</a></li>
+                        <li><a href="${contextPath}/sudungdichvu/create">Đăng ký Sử dụng dịch vụ</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Sử dụng máy
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${contextPath}/sudungmay/list">List Sử dụng máy</a></li>
+                        <li><a href="${contextPath}/sudungmay/create">Đăng ký sử dụng máy</a></li>
                     </ul>
                 </li>
             </ul>

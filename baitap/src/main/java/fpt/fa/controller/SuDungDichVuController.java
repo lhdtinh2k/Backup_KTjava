@@ -44,7 +44,6 @@ public class SuDungDichVuController {
 	@RequestMapping(value = "/create", method = RequestMethod.GET)	//chuyen link
 	public String displayCreate(Model model) {
 		model.addAttribute("sudungdichvu", new SuDungDichVu());
-		model.addAttribute("dangkysudungdichvu", new DangKySuDungDichVuForm());
 		model.addAttribute("dichvus", dichVuService.getList());
 		model.addAttribute("khachhangs", khachHangService.getList());
 		return "sudungdichvu/create";

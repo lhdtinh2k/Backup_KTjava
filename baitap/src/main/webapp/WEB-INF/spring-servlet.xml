@@ -29,6 +29,7 @@
 			<set>
 				<bean class="fpt.fa.formatter.StudentFormatter" />
 				<bean class="fpt.fa.formatter.DichVuFormatter" />
+				<bean class="fpt.fa.formatter.MayFormatter" />
 				<bean class="fpt.fa.formatter.KhachHangFormatter" />
 			</set>
 		</property>

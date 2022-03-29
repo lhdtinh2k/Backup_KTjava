@@ -88,8 +88,4 @@ public class SuDungDichVu implements Serializable{
 		SoLuong = soLuong;
 	}
 
-
-	
-	
-	
 }

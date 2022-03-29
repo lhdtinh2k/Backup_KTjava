@@ -1,10 +1,14 @@
 package fpt.fa.entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -25,6 +29,19 @@ public class May {
 	@Column(columnDefinition = "nvarchar(50)", nullable = true)
 	@Length(min = 4, message = "Chuỗi phải lớn hơn 4 ký tự")
 	private String TrangThai;
+
+	
+	
+	@OneToMany(mappedBy = "MaMay", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SuDungMay> suDungMays;
+		
+	public Set<SuDungMay> getSuDungMays() {
+		return suDungMays;
+	}
+
+	public void setSuDungMays(Set<SuDungMay> suDungMays) {
+		this.suDungMays = suDungMays;
+	}
 
 	public int getMaMay() {
 		return MaMay;

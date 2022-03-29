@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fpt.fa.entities.SuDungMay;
+import fpt.fa.service.KhachHangService;
+import fpt.fa.service.MayService;
 import fpt.fa.service.SuDungMayService;
 
 
@@ -25,6 +27,12 @@ public class SuDungMayController {
 	@Autowired
 	SuDungMayService sudungmayService;
 	
+	@Autowired
+	MayService mayService;
+	
+	@Autowired
+	KhachHangService khachHangService;
+	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)	//ten link address
 	public String list(Model model) {
 		List<SuDungMay> suDungMays = sudungmayService.getList();	
@@ -33,8 +41,10 @@ public class SuDungMayController {
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.GET)	//chuyen link
-	public String displayCreate(Model model) {
+	public String displayCreate(Model model) {	
 		model.addAttribute("sudungmay", new SuDungMay());
+		model.addAttribute("mays", mayService.getList());
+		model.addAttribute("khachhangs", khachHangService.getList());
 		return "sudungmay/create";
 	}	
 
